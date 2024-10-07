@@ -1,0 +1,49 @@
+body,
+html {
+    margin: 0;
+    padding-left: 130px;
+    padding-right: 130px;
+    font-family: Arial, sans-serif;
+}
+
+.cv-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 150vh;
+    border: 1px solid black;
+}
+
+
+.column {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.left-column {
+    background-color: #191970;
+    color: #ffffff;
+}
+
+
+.right-column {
+    background-color: #ffffff;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.formation {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.col {
+    flex: 1;
+    padding: 5px;
+    box-sizing: border-box;
+}
