@@ -3,38 +3,49 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css">
   <title>TP2</title>
-  <meta name="description" content="" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+ 
+  <form action="action.html" method="get">
+    <p>
+      <label for="firstname">Prénom</label>
+      <input type="text" name="firstname" minlength="2" maxlength="20" required />
+      
+    </p>
+    <p>
+      <label for="lastname">Nom</label>
+      <input type="text" name="lastname" minlength="2" maxlength="20" required />
+      
+    </p>
 
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-  <!-- Place favicon.ico in the root directory -->
+    <p>
+      <label for="Date">Date de naissance</label>
+      <input type="text" name="Date" minlength="2" maxlength="20" required />
+      
+    </p>
 
-  <style>
-    body {
-      background-color: #e9ebee;
-      font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco",
-        "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-      font-size: 16px;
-      margin: 0 auto;
-      max-width: 800px;
-    }
-  </style>
+    <p>
+      <label for="Adresse">Adresse postale</label>
+      <input type="text" name="Adresse" minlength="2" maxlength="20" required />
+      
+    </p>
 
-  <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-  <!--<link rel="stylesheet" href="style.css">-->
-  <!--<script src="js/main.js"></script>-->
+    <p>
+      <label for="email">Adresse mail </label>
+      <input type="text" name="email" minlength="2" maxlength="20" required />
+      
+    </p>
+
+    <button type="submit">Envoyer</button>
+
+  </form>
+
+ 
+  
 </head>
 
 <body>
-  <nav>
-    <a href="..">🏠 Index</a> / TP2
-  </nav>
-  <h1>tp2</h1>
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <img src="../galilee.png" alt="Logo Galilee" />
+  
 </body>
 
 </html>
