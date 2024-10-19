@@ -11,15 +11,42 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
 
+
+
     <style>
-        body {
-            background-color: #e9ebee;
-            font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-            font-size: 16px;
-            margin: 0 auto;
-            max-width: 800px;
+        body,
+        html {
+            height: 100%;
+
+            margin: 0;
+
+            display: flex;
+            justify-content: center;
+
+            align-items: center;
+
+
+        }
+
+        .container {
+            background-color: white;
+
+            padding: 20px;
+
+            border-radius: 8px;
+
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+            max-width: 400px;
+
         }
     </style>
+
+    <!-- CSS boostrap -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+
+    <!-- librairie Javascript de boostrap pour pouvoir utiliser les composants interactifs (modal https://getbootstrap.com/docs/5.1/components/modal/ , collapse...) -->
+    <script src="js/bootstrap.bundle.js"></script>
 
     <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
     <!--<link rel="stylesheet" href="style.css">-->
@@ -27,13 +54,87 @@
 </head>
 
 <body>
-    <nav>
-        <a href="..">🏠 Index</a> / TP3
-    </nav>
-    <h1>tp3</h1>
-    <!-- Add your site or application content here -->
-    <p>Hello world! This is HTML5 Boilerplate.</p>
-    <img src="../galilee.png" alt="Logo Galilee" />
+    <div class="container">
+        <form class="row g-3" onsubmit="return validateForm(event)">
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Nom</label>
+                <input type="Nom" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Prenom</label>
+                <input type="Prenom" class="form-control" id="inputPassword4">
+            </div>
+
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Date de naissance</label>
+                <input type="Date" class="form-control" id="birthday">
+            </div>
+
+
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">Email</label>
+                <input type="Email" class="form-control" id="inputAddress" placeholder="Adress Mail">
+            </div>
+
+            <div class="col-md-6">
+                <label for="inputAddress" class="form-label">Address</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Address">
+            </div>
+
+
+
+
+            <div class="col-md-4">
+                <label for="inputState" class="form-label">State</label>
+                <select id="inputState" class="form-select">
+                    <option selected>Choose...</option>
+                    <option>France</option>
+                    <option> Algeria </option>
+                    <option> Egypte</option>
+                    <option>Morocco</option>
+
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="inputZip" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="inputZip">
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Check me out
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+        </form>
+    </div>
+
+
+
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">...</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="form-validation.js"></script>
 </body>
 
 </html>
