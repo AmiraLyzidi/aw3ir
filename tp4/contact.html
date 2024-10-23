@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau des contacts</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        table {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Liste des contacts enregistrés</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Date de naissance</th>
+                <th>Adresse</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="contact-list"></tbody>
+    </table>
+
+    <script src="store.js"></script>
+    <script>
+        // Fonction pour afficher la liste des contacts sur la page du tableau
+        function displayContactList() {
+            const contactListString = localStorage.getItem('contactList'); // Récupérer la liste
+            const contactList = contactListString ? JSON.parse(contactListString) : []; // Parse si elle existe
+
+            const tbody = document.getElementById("contact-list");
+            tbody.innerHTML = ''; // Vide le tableau avant de l'actualiser
+
+            // Ajouter chaque contact dans le tableau
+            contactList.forEach(contact => {
+                tbody.innerHTML += `
+                    <tr>
+                        <td>${contact.name}</td>
+                        <td>${contact.firstname}</td>
+                        <td>${contact.date}</td>
+                        <td>${contact.address}</td>
+                        <td>${contact.email}</td>
+                    </tr>`;
+            });
+        }
+
+        // Appeler la fonction lors du chargement de la page
+        window.onload = displayContactList;
+    </script>
+</body>
+
+</html>

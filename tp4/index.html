@@ -3,37 +3,104 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>TP4</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP3</title>
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
-
+    <link rel="stylesheet" href="css/bootstrap.css" />
     <style>
-        body {
-            background-color: #e9ebee;
-            font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-            font-size: 16px;
-            margin: 0 auto;
-            max-width: 800px;
+        body,
+        html {
+            height: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container {
+            background-color: white;
+            margin-top: 50px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 90%;
+            margin-top: 20px;
         }
     </style>
-
-    <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-    <!--<link rel="stylesheet" href="style.css">-->
-    <!--<script src="main.js"></script>-->
 </head>
 
 <body>
-    <nav>
-        <a href="..">🏠 Index</a> / TP4
-    </nav>
-    <h1>TP4</h1>
-    <!-- Add your site or application content here -->
-    <p>Hello world! This is HTML5 Boilerplate.</p>
-    <img src="../galilee.png" alt="Logo Galilee" />
+    <!-- Formulaire pour ajouter un contact -->
+    <div class="container">
+        <form class="row g-3" onsubmit="return validateForm(event)">
+            <div class="col-12">
+                <h1> Ajouter un Contact</h1>
+            </div>
+            <div class="col-md-6">
+                <label for="inputNom" class="form-label">Nom</label>
+                <input type="text" class="form-control" id="inputNom" onkeyup="calcNbChar(this.id)">
+                <span></span>
+            </div>
+            <div class="col-md-6">
+                <label for="inputPrenom" class="form-label">Prénom</label>
+                <input type="text" class="form-control" id="inputPrenom" onkeyup="calcNbChar(this.id)">
+                <span></span>
+            </div>
+
+            <div class="col-md-6">
+                <label for="birthday" class="form-label">Date de naissance</label>
+                <input type="date" class="form-control" id="birthday">
+            </div>
+
+            <div class="col-12">
+                <label for="inputEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="Adresse Mail">
+            </div>
+
+            <div class="col-6">
+                <label for="inputAddress" class="form-label">Adresse</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Adresse">
+                <button type="button" class="btn btn-info mt-2" onclick="getLocation()">Obtenir ma position</button>
+            </div>
+            <div id="map" style="width:50PX; height:50px;"></div> <!-- Div pour afficher la carte -->
+
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Check me out</label>
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Ajouter Contact</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Tableau pour afficher les contacts -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Date de naissance</th>
+                <th>Adresse</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <!-- JS Files -->
+    <script src="form-validation.js"></script>
+    <script src="gps.js"></script>
+    <script src="store.js"></script>
 </body>
 
 </html>
