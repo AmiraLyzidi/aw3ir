@@ -203,9 +203,30 @@
           </clipPath>
         </defs>
       </svg>
-      <h1>Wellcom, {{ title }}</h1>
-      <router-outlet></router-outlet>
-      <p>Congratulations! Your app is running. 🎉</p>
+      <div class="container">
+        <!-- menu du haut de page -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" routerLink="/">Météo avec Angular</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" routerLink="/">Accueil</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- fin : menu du haut de page -->
+
+        <!--The content below is only a placeholder and can be replaced.-->
+        <div>
+          <h1>Welcome to {{ title }}!</h1>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
@@ -249,9 +270,6 @@
       </div>
     </div>
   </div>
-
-
-
 </main>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
@@ -261,8 +279,6 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
 
 
 <router-outlet />
